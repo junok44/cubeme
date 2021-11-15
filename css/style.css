@@ -1,0 +1,1326 @@
+@charset 'utf-8';
+@import url('notosanskr/NotoSansKR.css');
+@import url('font.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+html {
+    font-size: 10px;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'AppleSDGothicNeoR', 'roboto', '돋움', 'NotoSansKR', Dotum, sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.3;
+    color: #333;
+}
+
+/* 모달창 */
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+
+    display: none;
+}
+
+.modal-cont {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 20px;
+    width: 400px;
+    height: 250px;
+    background-color: #fff;
+}
+
+.alert {
+    position: absolute;
+    left: 50%;
+    top: 2.8rem;
+    transform: translateX(-50%);
+    font-size: 3rem;
+}
+
+.modal-tit {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    font-family: 'Noto Sans KR'sans-serif;
+    font-weight: 600;
+    font-size: 1.7rem;
+    letter-spacing: -0.028rem;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.modal-txt {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    font-family: 'Noto Sans KR'sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: #666;
+    letter-spacing: -0.028rem;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.modal-close {
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    width: 12rem;
+    height: 3rem;
+    background-color: #000;
+    transform: translate(-50%, -50%);
+    border: none;
+    font-family: 'Noto Sans KR'sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #fff;
+    letter-spacing: -0.028rem;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-close:hover {
+    background-color: #8eb5f0;
+}
+
+
+/*공통클래스*/
+
+.pagew {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 176rem;
+}
+
+.pagew2 {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 128rem;
+}
+
+
+.clearfix:after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.left {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.right {
+    position: relative;
+    display: block;
+    float: right;
+}
+
+.ml-0 {
+    margin-left: 0;
+}
+
+/*우측 고정메뉴*/
+.fix-menu {
+    position: fixed;
+    display: block;
+    right: 3rem;
+    bottom: 10%;
+    width: 5.2rem;
+    height: 5.2rem;
+    border: 0.1rem solid #efefef;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 3px rgb(0 0 0 / 1%);
+    z-index: 12;
+    background-color: #fff;
+    transition: background 0.3s;
+    /*visibility: hidden;*/
+
+}
+
+.fix-menu:hover {
+    background: #f8f8f8;
+}
+
+
+
+
+/*전체화면*/
+.wrap {
+    position: relative;
+    display: block;
+}
+
+/*상단*/
+.header {
+    position: fixed;
+    height: 12.5rem;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.header .pagew {
+    height: 100%;
+}
+
+.header-wrap {
+    position: relative;
+    display: block;
+}
+
+.gnb-wrap {
+    position: relative;
+    display: block;
+    top: 6.5rem;
+    /*padding-bottom: 2.5rem;*/
+}
+
+.logo>img {
+    position: relative;
+    display: block;
+    width: 12rem;
+    height: 3rem;
+}
+
+.gnb {
+    position: relative;
+    display: block;
+    top: -1.5rem;
+}
+
+.gnb-list {
+    position: relative;
+    display: block;
+}
+
+.gnb-list>li {
+    position: relative;
+    display: block;
+    float: left;
+    margin: 0 2.5rem;
+}
+
+.gnb-list>li:first-child {
+    margin-left: 5rem;
+}
+
+.gnb-list>li:after {
+    position: absolute;
+    bottom: -0.7rem;
+    display: inline-block;
+    content: '';
+    height: 0.2rem;
+    width: 6.3rem;
+    text-align: center;
+    background: #000;
+}
+
+.gnb-list-2:after {
+    width: 16.2rem !important;
+}
+
+.gnb-list-34:after {
+    width: 5rem !important;
+}
+
+.gnb-list-5:after {
+    width: 8.5rem !important;
+}
+
+.gnb-list>li:after {
+    visibility: hidden;
+}
+
+.gnb-list>li:hover:after {
+    visibility: visible;
+}
+
+
+.gnb-list>li a {
+    position: relative;
+    display: block;
+    color: #666;
+    font-family: 'Noto Sans KR';
+    font-size: 1.6rem;
+    text-align: center;
+    width: auto;
+    letter-spacing: -0.028rem;
+    line-height: 1.6rem;
+    margin-top: 1.5rem;
+    font-weight: 400;
+}
+
+.more-gnb {
+    position: absolute;
+    display: none;
+    top: 6rem;
+    height: 6rem;
+    background: #fbfbfa;
+    border-top: 0.1rem solid #ebebeb;
+    border-bottom: 0.1rem solid #ebebeb;
+    z-index: 955;
+}
+
+.more-gnb>li {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.more-gnb>li>a {
+    position: relative;
+    display: block;
+    color: #333;
+    font-size: 1.6rem;
+    font-family: 'AppleSDGothicNeoR';
+    letter-spacing: -0.028rem;
+    line-height: 6rem;
+    text-align: left;
+    margin: 0 3rem;
+}
+
+.search-wrap {
+    position: relative;
+    display: block;
+    top: 6.5rem;
+    /* width: 20rem;
+    height: 4rem;*/
+    background-color: #f5f5f5;
+    border-radius: 2rem;
+    margin-right: 4.5rem;
+}
+
+.form {
+    position: relative;
+    display: block;
+    width: 24rem;
+    height: 4rem;
+}
+
+
+.search {
+    position: relative;
+    display: block;
+    border: none;
+    background-color: #f5f5f5;
+    top: 1rem;
+    left: 1rem;
+}
+
+.search-icon {
+    position: relative;
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    float: right;
+    right: 1.2rem;
+    top: -0.8rem;
+}
+
+.cart {
+    position: absolute;
+    top: 1rem;
+    right: -3.5rem;
+    display: block;
+    background: url('../images/cart.svg') no-repeat center;
+    width: 2.7rem;
+    height: 2.4rem;
+    background-position: 0 0;
+}
+
+.count {
+    position: absolute;
+    top: -0.7rem;
+    right: -0.8rem;
+    display: block;
+    float: right;
+    color: #fff;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 2rem;
+    border-radius: 50%;
+    background-color: #fc454c;
+}
+
+.member-wrap {
+    position: relative;
+    display: block;
+}
+
+.member {
+    position: absolute;
+    right: 0;
+}
+
+.member>li {
+    position: relative;
+    display: block;
+    float: left;
+    margin: 0 1rem;
+    ;
+}
+
+.dot {
+    position: absolute;
+    top: 1rem;
+    right: -0.4rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: #ff0000;
+}
+
+.member>li:after {
+    position: absolute;
+    display: block;
+    top: 1.1rem;
+    right: -1rem;
+    content: '';
+    width: 0.1rem;
+    height: 1rem;
+    background: #999;
+}
+
+.member>li:last-child:after {
+    display: none;
+}
+
+.member>li>a {
+    position: relative;
+    display: block;
+    font-size: 1.2rem;
+    color: #333;
+    letter-spacing: -0.028rem;
+    line-height: 3rem;
+
+}
+
+.member>li:first-child>a {
+    color: #FC454C;
+}
+
+/*비주얼*/
+.visual {
+    position: relative;
+    display: block;
+    height: 80.8rem;
+    padding-top: 12.5rem;
+    padding-bottom: 9rem;
+}
+
+.visual .pagew {
+    position: relative;
+    display: block;
+    height: 100%;
+}
+
+.left-visuals {
+    position: relative;
+    display: block;
+}
+
+.left-visual-1 {
+    position: relative;
+    display: block;
+}
+
+.left-visual-1>a>img {
+    position: relative;
+    display: block;
+    width: 116.3rem;
+    height: 80.8rem;
+    object-fit: cover;
+}
+
+.sw-visual-pg {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    z-index: 5;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    font-family: 'AppleSDGothicNeoR';
+}
+
+.right-visuals {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+}
+
+.right-visual {
+    position: relative;
+    display: block;
+}
+
+.right-visual>img {
+    position: relative;
+    display: block;
+    width: 58.7rem;
+    height: 26.3rem;
+    object-fit: cover;
+}
+
+.visual-image-txt {
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem;
+    display: block;
+    color: #fff;
+    font-family: 'AppleSDGothicNeoR';
+    font-size: 2.1rem;
+    font-weight: 600;
+    letter-spacing: -0.042rem;
+    line-height: 2.73rem;
+}
+
+.n2>img {
+    margin: 1rem 0;
+}
+
+/*인기상품*/
+.item {
+    position: relative;
+    display: block;
+    font-family: 'AppleSDGothicNeoR'
+}
+
+.item .pagew {
+    position: relative;
+    display: block;
+}
+
+.hot-item-wrap {
+    position: relative;
+    display: block;
+    margin-bottom: 3.5rem;
+}
+
+.text-area-left {
+    position: relative;
+    display: block;
+}
+
+.title {
+    position: relative;
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #333;
+    line-height: 3.64rem;
+    letter-spacing: -0.028rem;
+}
+
+.desc {
+    position: relative;
+    display: block;
+    font-size: 1.8rem;
+    color: #999;
+    line-height: 2.34rem;
+    letter-spacing: -0.028rem;
+    padding-top: 1.5rem;
+}
+
+.text-area-right>a {
+    position: absolute;
+    display: inline-block;
+    width: 10rem;
+    bottom: -7rem;
+    left: -8rem;
+    color: #333;
+    font-size: 1.6rem;
+    letter-spacing: -0.028rem;
+    line-height: 2.08rem;
+
+}
+
+.hot-item-wrap {
+    position: relative;
+    display: block;
+}
+
+
+.hot-item-image {
+    position: relative;
+    display: block;
+}
+
+.hot-item-image>a {
+    position: relative;
+    display: block;
+    background: #fafafa;
+    width: 41.6rem;
+    height: 34rem;
+}
+
+.hot-item-image-1>img {
+    position: relative;
+    display: block;
+    width: 27.2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 27.2rem;
+    object-fit: cover;
+}
+
+.hot-item-image-2>img {
+    position: relative;
+    display: block;
+    width: 27.2rem;
+    height: 27.2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.hot-item-image-2 {
+    margin: 0 1.6rem;
+}
+
+.hot-item-image-3>img {
+    position: relative;
+    display: block;
+    width: 27.2rem;
+    height: 27.2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.hot-item-bottom-wrap {
+    position: relative;
+    display: block;
+    height: 21rem;
+}
+
+.item-title-wrap {
+    position: relative;
+    display: block;
+    width: 41.6rem;
+}
+
+.i2 {
+    margin-left: 1.6rem;
+}
+
+.i3 {
+    margin-left: 1.6rem;
+}
+
+.item-title {
+    position: relative;
+    display: block;
+    color: #333;
+    font-size: 1.7rem;
+    letter-spacing: -0.028rem;
+    line-height: 2.21rem;
+    padding-top: 2.2rem;
+    padding-bottom: 1rem;
+}
+
+.item-discount {
+    position: relative;
+    display: block;
+    color: #ccc;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.028rem;
+    line-height: 2.34rem;
+    text-decoration: line-through;
+}
+
+.item-percent {
+    position: relative;
+    display: block;
+    float: left;
+    color: #fc454c;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.028rem;
+    line-height: 2.34rem;
+    margin-right: 1rem;
+}
+
+.item-price {
+    position: relative;
+    display: block;
+    float: left;
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.028rem;
+    line-height: 2.34rem;
+}
+
+.item-desc {
+    position: absolute;
+    top: 11rem;
+    left: 0;
+    display: block;
+    color: #999;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: -0.028rem;
+    line-height: 2.25rem;
+}
+
+
+/*공지*/
+.line {
+    position: relative;
+    display: block;
+    height: 2rem;
+    background: #f5f5f5;
+    margin-bottom: 9rem;
+    font-family: 'AppleSDGothicNeoR'
+
+}
+
+.notice {
+    position: relative;
+    display: block;
+}
+
+.notice .pagew2 {
+    position: relative;
+    display: block;
+}
+
+.notice-top {
+    position: relative;
+    display: block;
+}
+
+.notice-top>h2 {
+    position: relative;
+    display: block;
+    width: 15rem;
+    height: 5rem;
+    border-radius: 2.35rem;
+    background-color: #fa3826;
+    color: #fff;
+    font-family: 'Noto Sans KR';
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 5rem;
+    margin: 0 auto;
+}
+
+.notice-top>span {
+    position: relative;
+    display: block;
+    text-align: center;
+    color: #999;
+    font-size: 1.8rem;
+    letter-spacing: -0.028rem;
+    line-height: 2.34rem;
+    font-weight: 600;
+    margin-top: 0.8rem;
+    margin-bottom: 3.5rem;
+}
+
+.notice-bottom {
+    position: relative;
+    display: block;
+    margin-bottom: 9rem;
+    font-family: 'Noto Sans KR';
+}
+
+.notice-bottom strong {
+    font-weight: 900;
+}
+
+.notice-1 {
+    position: relative;
+    display: block;
+    width: 41rem;
+    height: 23rem;
+    background: #fceeed;
+}
+
+.notice-2 {
+    position: relative;
+    display: block;
+    width: 41rem;
+    height: 23rem;
+    background: #fceeed;
+    margin: 0 2.5rem;
+}
+
+.notice-3 {
+    position: relative;
+    display: block;
+    width: 41rem;
+    height: 23rem;
+    background: #fceeed;
+}
+
+.circle {
+    position: relative;
+    display: block;
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 50%;
+    background: #fa5c4e;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.icon-1 {
+    position: relative;
+    display: block;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.icon-2 {
+    position: relative;
+    display: block;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.icon-3 {
+    position: relative;
+    display: block;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.notice-bottom-txt {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 2.6rem;
+    line-height: 3.38rem;
+    letter-spacing: -0.028rem;
+    font-weight: 400;
+    color: #000;
+}
+
+
+/*이벤트*/
+.event {
+    position: relative;
+    display: block;
+    font-family: 'AppleSDGothicNeoR'
+}
+
+.event .pagew2 {
+    position: relative;
+    display: block;
+}
+
+.event-top {
+    position: relative;
+    display: block;
+    margin-bottom: 4rem;
+}
+
+.on-event {
+    position: relative;
+    display: inline-block;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: -0.028rem;
+    line-height: 3.64rem;
+}
+
+.event-more {
+    position: relative;
+    display: inline-block;
+    font-size: 1.6rem;
+    color: #333;
+    letter-spacing: -0.028rem;
+    line-height: 2.08rem;
+    top: 1rem;
+}
+
+.event-mid {
+    position: relative;
+    display: block;
+}
+
+.event-mid-image-1>a>img {
+    position: relative;
+    display: block;
+    width: 60rem;
+    height: 42rem;
+    object-fit: cover;
+}
+
+.event-mid-image-2>a>img {
+    position: relative;
+    display: block;
+    width: 60rem;
+    height: 42rem;
+    object-fit: cover;
+}
+
+.mid-line {
+    position: relative;
+    display: block;
+    width: 0.1rem;
+    height: 42rem;
+    background: #ddd;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.event-title {
+    position: relative;
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.028rem;
+    line-height: 2.86rem;
+    color: #333;
+    padding-top: 2.5rem;
+}
+
+.event-txt {
+    position: relative;
+    display: block;
+    font-size: 1.8rem;
+    letter-spacing: -0.028rem;
+    line-height: 2.34rem;
+    color: #999;
+    margin-bottom: 9rem;
+}
+
+/*슬라이드*/
+.slide {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 49.3rem;
+    background: #ffebea;
+    font-family: 'AppleSDGothicNeoR'
+}
+
+.slide .pagew2 {
+    position: relative;
+    display: block;
+}
+
+.slide-top {
+    position: relative;
+    display: block;
+    width: 35.8rem;
+    height: 5rem;
+    background: #fa3826;
+    border-radius: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #fff;
+    font-size: 2.8rem;
+    line-height: 5rem;
+    letter-spacing: -0.028rem;
+    top: 9rem;
+
+}
+
+.sw-slide {
+    width: 60rem;
+}
+
+.slide-list {
+    position: relative;
+    display: block;
+    height: 49.5rem;
+    /* margin: 0 auto;*/
+}
+
+.slide-image3 {
+    position: relative;
+    display: block;
+    width: 20rem;
+    height: 25rem;
+    object-fit: cover;
+}
+
+.s1-1 {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sw-slide-pg {
+    position: absolute;
+    top: 37rem;
+}
+
+
+/*추천*/
+.recommend {
+    position: relative;
+    display: block;
+    padding-top: 9.5rem;
+    font-family: 'AppleSDGothicNeoR'
+}
+
+.recommend .pagew2 {
+    position: relative;
+    display: block;
+}
+
+.recommend-top {}
+
+.recommend-title {
+    position: relative;
+    display: block;
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #333;
+    letter-spacing: -0.028rem;
+}
+
+.recommend-txt {
+    position: relative;
+    display: block;
+    top: -1.8rem;
+    font-size: 1.8rem;
+    margin-bottom: 3.5rem;
+    line-height: 1.3;
+    color: #999;
+    letter-spacing: -0.028rem;
+}
+
+/*추천상품가격*/
+
+.recommend-item-image {
+    margin-right: 1.3rem;
+}
+
+.recommend-item-image:last-child {
+    margin-right: 0;
+}
+
+.recommend-item {
+    position: relative;
+    display: block;
+    top: -1.5rem;
+    width: 24.4rem;
+    height: 24.4rem;
+}
+
+.r-item {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #fafafa;
+}
+
+.recommend-item-txt {
+    position: relative;
+    display: block;
+}
+
+.r-item-title {
+    position: relative;
+    display: block;
+    color: #333;
+    font-size: 1.7rem;
+    letter-spacing: -0.028rem;
+    line-height: 2.21rem;
+    padding-top: 2.2rem;
+    padding-bottom: 1rem;
+}
+
+.r-item-discount {
+    position: relative;
+    display: block;
+    color: #ccc;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.028rem;
+    line-height: 2.34rem;
+    text-decoration: line-through;
+}
+
+.r-item-percent {
+    position: relative;
+    display: block;
+    float: left;
+    color: #fc454c;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.028rem;
+    line-height: 2.34rem;
+    margin-right: 1rem;
+}
+
+.r-item-price {
+    position: relative;
+    display: block;
+    float: left;
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.028rem;
+    line-height: 2.34rem;
+}
+
+.r-item-desc {
+    position: absolute;
+    top: 11rem;
+    left: 0;
+    display: block;
+    color: #999;
+    width: 24.4rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: -0.028rem;
+    line-height: 2.25rem;
+}
+
+/*배너*/
+.banner {
+    position: relative;
+    display: block;
+    margin: 13rem 0;
+}
+
+.banner .pagew {
+    height: 38.4rem;
+}
+
+.bottom-banner {
+    width: 100%;
+    height: auto;
+}
+
+/*하단*/
+.footer {
+    position: relative;
+    display: block;
+    padding-top: 7rem;
+    padding-bottom: 2rem;
+    background: #000;
+    font-family: 'AppleSDGothicNeoR'
+}
+
+.footer-top {
+    position: relative;
+    display: block;
+}
+
+.footer-logo {
+    position: relative;
+    display: block;
+    width: 14rem;
+    height: 3.5rem;
+}
+
+.footer-logo-next {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.footer-logo-next {}
+
+.footer-logo-next>li {
+    position: relative;
+    display: block;
+    float: left;
+    margin-right: 5.5rem;
+}
+
+
+
+.footer-logo-next>li>a {
+    position: relative;
+    display: block;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.028rem;
+    line-height: 1.35;
+}
+
+.footer-middle {}
+
+.footer-middle-txt {
+    position: relative;
+    display: block;
+    padding-top: 4rem;
+    padding-left: 0;
+}
+
+.footer-middle-txt>li {
+    position: relative;
+    display: block;
+    float: left;
+    margin: 0 0.9rem;
+}
+
+.footer-middle-txt>li:first-child {
+    margin-left: 0;
+}
+
+.footer-middle-txt>li>a {
+    position: relative;
+    font-size: 1.5rem;
+    color: #9e9e9e;
+}
+
+.footer-middle-txt>li:nth-child(4)>a {
+    font-weight: 700;
+    color: #fff;
+}
+
+.footer-middle-txt>li:after {
+    position: absolute;
+    top: 0.8rem;
+    right: -0.9rem;
+    content: '';
+    width: 0.2rem;
+    height: 0.2rem;
+    background: #9e9e9e;
+}
+
+.footer-middle-txt>li:last-child:after {
+    display: none;
+}
+
+.footer-bottom {
+    position: relative;
+    display: block;
+    padding-top: 5rem;
+}
+
+.footer-bottom p {
+    position: relative;
+    display: block;
+    font-size: 1.3rem;
+    color: #9e9e9e;
+    line-height: 1;
+    font-weight: 400;
+    margin: 0.7rem 0;
+}
+
+.footer-bottom p span {
+    margin-right: 1rem
+}
+
+.footer-bottom p span:after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    left: 0.6rem;
+    width: 0.1rem;
+    height: 1rem;
+    background: #9e9e9e;
+}
+
+.footer-bottom p span:last-child:after {
+    content: none;
+}
+
+.copy {
+    font-size: 1.3rem;
+    color: #9e9e9e;
+    line-height: 1;
+    font-weight: 400;
+    padding-top: 1.3rem;
+}
+
+.kor {
+    position: relative;
+    display: block;
+    border: 2px solid #fff;
+    border-radius: 0.5rem;
+    width: 6.8rem;
+    line-height: 2.4rem;
+    color: #fff;
+    font-weight: 800;
+    text-align: center;
+    vertical-align: 0;
+
+}
+
+.fb {
+    position: relative;
+    display: block;
+    border: 2px solid #fff;
+    border-radius: 0.5rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    text-align: center;
+    margin: 0 1rem;
+}
+
+.insta {
+    position: relative;
+    display: block;
+    border: 2px solid #fff;
+    border-radius: 0.5rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    text-align: center;
+}
